@@ -1,7 +1,11 @@
 pipeline {
     agent any
+    environment {
+        DOCKER_CREDENTIALS = credentials('docker-credentials')
+        dockerimage = 'java-webapp'
+    }
     stages {
-        stage ('Build ') {
+      stage ('Build ') {
             steps {
                 echo 'building ...'
                 sh 'docker build -t java-weapp .'
