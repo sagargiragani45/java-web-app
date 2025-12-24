@@ -4,7 +4,7 @@ pipeline {
         stage ('Build ') {
             steps {
                 echo 'building ...'
-                sh 'docker build -t java-weapp'
+                sh 'docker build -t java-weapp .'
             }
             
         }
